@@ -11,8 +11,8 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
 import com.simibubi.create.foundation.block.connected.CTType;
 import com.simibubi.create.foundation.block.connected.HorizontalCTBehaviour;
-import com.simibubi.create.foundation.block.render.SpriteShiftEntry;
-import com.simibubi.create.foundation.block.render.SpriteShifter;
+import net.createmod.catnip.render.SpriteShiftEntry;
+import net.createmod.catnip.render.SpriteShifter;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 

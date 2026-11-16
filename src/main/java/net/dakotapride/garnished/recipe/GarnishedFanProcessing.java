@@ -3,13 +3,18 @@ package net.dakotapride.garnished.recipe;
 import java.util.List;
 import java.util.Optional;
 
+import com.simibubi.create.Create;
+import com.simibubi.create.api.registry.CreateBuiltInRegistries;
+
+import net.minecraft.core.Registry;
+
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingTypeRegistry;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
-import com.simibubi.create.foundation.utility.Color;
+import net.createmod.catnip.theme.Color;
 
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import net.dakotapride.garnished.CreateGarnished;
@@ -72,7 +77,7 @@ public class GarnishedFanProcessing {
 	}
 
 	private static <T extends FanProcessingType> T register(String id, T type) {
-		FanProcessingTypeRegistry.register(CreateGarnished.asResource(id), type);
+		Registry.register(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, Create.asResource(id), type);
 		return type;
 	}
 
@@ -106,7 +111,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			FREEZING_WRAPPER.setItem(0, stack);
 			Optional<FreezingFanRecipe> recipe = GarnishedRecipeTypes.FREEZING.find(FREEZING_WRAPPER, level);
-			return recipe.map(freezingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, freezingFanRecipe)).orElse(null);
+			return recipe.map(freezingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, freezingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -171,7 +176,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -227,7 +232,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -283,7 +288,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -339,7 +344,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -395,7 +400,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -451,7 +456,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -507,7 +512,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -563,7 +568,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -619,7 +624,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -675,7 +680,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -731,7 +736,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -787,7 +792,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -843,7 +848,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -899,7 +904,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -955,7 +960,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override
@@ -1011,7 +1016,7 @@ public class GarnishedFanProcessing {
 		public List<ItemStack> process(ItemStack stack, Level level) {
 			BLOWING_WRAPPER.setItem(0, stack);
 			Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+			return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
 		}
 
 		@Override

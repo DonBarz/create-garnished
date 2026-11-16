@@ -3,7 +3,7 @@ package net.dakotapride.garnished.registry.EMI;
 import com.simibubi.create.compat.emi.CreateEmiAnimations;
 import com.simibubi.create.compat.emi.recipes.fan.FanEmiRecipe;
 import com.simibubi.create.compat.jei.category.animations.AnimatedKinetics;
-import com.simibubi.create.foundation.gui.element.GuiGameElement;
+import net.createmod.catnip.gui.element.GuiGameElement;
 
 import net.dakotapride.garnished.recipe.FreezingFanRecipe;
 import net.minecraft.client.gui.GuiGraphics;

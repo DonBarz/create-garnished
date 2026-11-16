@@ -7,12 +7,12 @@ import javax.annotation.Nullable;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.fluid.FluidHelper;
-import com.simibubi.create.foundation.utility.Iterate;
 import com.tterrag.registrate.fabric.SimpleFlowableFluid;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 
 import io.github.fabricators_of_create.porting_lib.event.common.FluidPlaceBlockCallback;
+import net.createmod.catnip.data.Iterate;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.block.DragonBreathFluidBlock;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;

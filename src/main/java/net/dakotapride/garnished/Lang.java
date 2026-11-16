@@ -1,8 +1,7 @@
 package net.dakotapride.garnished;
 
-import com.simibubi.create.foundation.utility.Components;
-import com.simibubi.create.foundation.utility.LangBuilder;
-import com.simibubi.create.foundation.utility.LangNumberFormat;
+import net.createmod.catnip.lang.LangBuilder;
+import net.createmod.catnip.lang.LangNumberFormat;
 
 import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
 import net.minecraft.Util;
@@ -131,7 +130,7 @@ public class Lang {
 	 * @return the LangBuilder
 	 */
 	public LangBuilder tooltip(Item item, String suffix, Object... args) {
-		return builder().add(Components.translatable(item.getDescriptionId() + ".tooltip." + suffix, args));
+		return builder().add(Component.translatable(item.getDescriptionId() + ".tooltip." + suffix, args));
 	}
 
 	/**
@@ -144,7 +143,7 @@ public class Lang {
 	 * @return the LangBuilder
 	 */
 	public LangBuilder tooltip(Block block, String suffix, Object... args) {
-		return builder().add(Components.translatable(block.getDescriptionId() + ".tooltip." + suffix, args));
+		return builder().add(Component.translatable(block.getDescriptionId() + ".tooltip." + suffix, args));
 	}
 
 	/**
@@ -157,7 +156,7 @@ public class Lang {
 	 * @return the LangBuilder
 	 */
 	public LangBuilder fromRL(String category, ResourceLocation loc, Object... args) {
-		return builder().add(Components.translatable(Util.makeDescriptionId(category, loc), args));
+		return builder().add(Component.translatable(Util.makeDescriptionId(category, loc), args));
 	}
 
 	/**

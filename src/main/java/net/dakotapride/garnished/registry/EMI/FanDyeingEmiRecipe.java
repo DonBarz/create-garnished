@@ -2,7 +2,7 @@ package net.dakotapride.garnished.registry.EMI;
 
 import com.simibubi.create.compat.emi.CreateEmiAnimations;
 import com.simibubi.create.compat.emi.recipes.fan.FanEmiRecipe;
-import com.simibubi.create.foundation.gui.element.GuiGameElement;
+import net.createmod.catnip.gui.element.GuiGameElement;
 
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import net.dakotapride.garnished.recipe.DyeBlowingFanRecipe;
