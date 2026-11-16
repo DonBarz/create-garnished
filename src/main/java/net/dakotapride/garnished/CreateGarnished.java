@@ -3,6 +3,7 @@ package net.dakotapride.garnished;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.TooltipHelper;
 
+import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.garnished.modifier.LootTableModifiers;
 
 import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
@@ -59,7 +60,7 @@ public class CreateGarnished implements ModInitializer {
 	}
 
 	static {
-		REGISTRATE.get().setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE));
+		REGISTRATE.get().setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE));
 	}
 
 	@Override
@@ -110,7 +111,7 @@ public class CreateGarnished implements ModInitializer {
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.BASALT_DELTAS),
 				GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.SORROWFUL_LICHEN_BASALT_DELTAS_PLACED);
 
-		LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
+		// LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
 		LOGGER.info(EnvExecutor.unsafeRunForDist(
 				() -> () -> "{} is accessing Porting Lib from the client!",
 				() -> () -> "{} is accessing Porting Lib from the server!"
