@@ -1,7 +1,6 @@
 package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.foundation.item.TooltipHelper;
 
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.garnished.modifier.LootTableModifiers;
@@ -22,7 +21,6 @@ import net.minecraft.world.level.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.simibubi.create.Create;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 
